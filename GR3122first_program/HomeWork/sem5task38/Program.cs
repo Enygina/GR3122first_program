@@ -86,7 +86,7 @@ void Swap(int[] array, int i, int j)//меняем местами значени
     array[j] = temp;
 }
 
-void InsertSortArr(int[] array)//Сортировка методом вставки
+int[] InsertSortArr(int[] array)//Сортировка методом вставки
 {
     int x;
     int j;
@@ -101,41 +101,35 @@ void InsertSortArr(int[] array)//Сортировка методом встав�
         }
         array[j] = x;
     }
+    return array;
 }
 
-void CountingSort(int[] array)//сортировка методом подсчета
+// сортировка подсчётом
+void СountingSort(int[] arr, int min, int max)
 {
-    int max = array.Max();
-    int min = array.Min();
-    int range = max - min + 1;
-    int[] count = new int[range];
-    int[] output = new int[array.Length];
-    for (int i = 0; i < array.Length; i++)
+    int[] count = new int[max - min + 1];
+    int z = 0;
+    for (int i = 0; i < arr.Length; i++)
     {
-        count[array[i] - min]++;
+        count[arr[i] - min]++;
     }
-    for (int i = 1; i < count.Length; i++)
+    for (int i = min; i <= max; i++)
     {
-        count[i] += count[i - 1];
-    }
-    for (int i = array.Length - 1; i >= 0; i--)
-    {
-        output[count[array[i] - min] - 1] = array[i];
-        count[array[i] - min]--;
-    }
-    for (int i = 0; i < array.Length; i++)
-    {
-        array[i] = output[i];
+        while (count[i - min]-- > 0)
+        {
+            arr[z] = i;
+            z++;
+        }
     }
 }
 
 
-int FirstLastDigitDiff(int[]array)//поиск разница первого и последнего элемента массива
-{ 
-int n = array.Length - 1;
-int i = 0;
-int dif = array[n] - array[i];
-return dif;
+int FirstLastDigitDiff(int[] array)//поиск разница первого и последнего элемента массива
+{
+    int n = array.Length - 1;
+    int i = 0;
+    int dif = array[n] - array[i];
+    return dif;
 }
 
 
@@ -146,7 +140,7 @@ Console.WriteLine(DateTime.Now - d1);
 double[] doubleArray = Array.ConvertAll(inputArray, i => (double)i);
 Print1DArray(doubleArray);
 DateTime d2 = DateTime.Now;
-CountingSort(inputArray);
+СountingSort(inputArray,downBorder, topBorder);
 Console.WriteLine(DateTime.Now - d2);
 Print1DArray(doubleArray);
 PrintResult("Разница между первым и последним элементом массива: " + FirstLastDigitDiff(inputArray));

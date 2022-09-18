@@ -80,8 +80,8 @@ void PrintResult(string line)
 int arrayLength = ReadData("Введите длину массива");
 int downBorder = 100;
 int topBorder = 999;
-int[] inputArray = BubbleSort(FillArray(arrayLength, downBorder, topBorder));
-Print1DArray(inputArray);
+int[] inputArray =FillArray(arrayLength, downBorder, topBorder);
+Print1DArray(BubbleSort(inputArray));
 int evenCount = EvenCount(inputArray);
 PrintResult("Всего в массиве " + evenCount + " четных чисел");
 
