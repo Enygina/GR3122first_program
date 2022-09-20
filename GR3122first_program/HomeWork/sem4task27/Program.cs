@@ -21,7 +21,7 @@ string number = (ReadData("Введите число:")).ToString();
 
 int SumChar(string number)//массив
 {
-int sum = (int)number.Select(n => Char.GetNumericValue(n)).Sum();//число записываем в массив, переводим в цисловой формат, перебирает, суммируем
+int sum = (int)number.Select(n => Char.GetNumericValue(n)).Sum();//число записываем в массив, переводим в числовой формат, перебирает, суммируем
 return sum;
 }
 
