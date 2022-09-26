@@ -9,11 +9,11 @@ int ReadData(string line)
     return number;
 }
 
-// печать результата
-void PrintData(string prefix, string data) //разбили на две части вывод в консоль
-{
-    Console.WriteLine(prefix + data); //сначала выводим prefix + а потом данные data\
-}
+// // печать результата
+// void PrintData(string prefix, string data) //разбили на две части вывод в консоль
+// {
+//     Console.WriteLine(prefix + data); //сначала выводим prefix + а потом данные data\
+// }
 
 // Универсальный метод генерации и заполнение двумерного массива
 int[,] Fill2DArray(int countRow, int countColumn, int topBorder, int downBorder)
@@ -34,18 +34,18 @@ int[,] Fill2DArray(int countRow, int countColumn, int topBorder, int downBorder)
     return array2D;
 }
 
-// Печать двумерного массива
-void Print2DArray(int[,] matr)
-{
-    for (int i = 0; i < matr.GetLength(0); i++)
-    {
-        for (int j = 0; j < matr.GetLength(1); j++)
-        {
-            Console.Write($"{matr[i, j]} ");
-        }
-        Console.WriteLine();
-    }
-}
+// // Печать двумерного массива
+// void Print2DArray(int[,] matr)
+// {
+//     for (int i = 0; i < matr.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < matr.GetLength(1); j++)
+//         {
+//             Console.Write($"{matr[i, j]} ");
+//         }
+//         Console.WriteLine();
+//     }
+// }
 
 ConsoleColor[] col = new ConsoleColor[]{ConsoleColor.Black,ConsoleColor.Blue,ConsoleColor.Cyan,
                                         ConsoleColor.DarkBlue,ConsoleColor.DarkCyan,ConsoleColor.DarkGray,
