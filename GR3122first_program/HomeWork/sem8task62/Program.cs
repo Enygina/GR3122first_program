@@ -47,7 +47,7 @@ void PrintArray(int[,] array)
 	}
 }
 
-int len = 7;
+int len  = ReadData("размерность матрицы: ");
 int[,] table = new int[len, len];
 FillArraySpiral(table, len);
 PrintArray(table);
